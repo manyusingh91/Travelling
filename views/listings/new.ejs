@@ -1,0 +1,95 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row">
+  <div class="col-8 offset-2">
+    <br /><br />
+    <h3>Create a New Listing</h3>
+    <form method="POST" action="/listings">
+
+      <!-- Title Field -->
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input 
+          name="listing[title]" 
+          placeholder="Add a catchy title" 
+          type="text" 
+          class="form-control" 
+          required
+          aria-label="Title of the listing"
+        />
+      </div>
+
+      <!-- Description Field -->
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          name="listing[description]"
+          placeholder="Describe the listing in detail"
+          class="form-control" 
+          required
+          aria-label="Description of the listing"
+        ></textarea>
+      </div>
+
+      <!-- Image Link Field -->
+      <div class="mb-3">
+        <label for="image" class="form-label">Image Link</label>
+        <input
+          name="listing[imageUrl]"
+          placeholder="Enter image URL/Link"
+          type="text"
+          class="form-control"
+          required
+          aria-label="URL for the listing image"
+        />
+        <small class="form-text text-muted">Provide a valid image URL (e.g., Unsplash, etc.)</small>
+      </div>
+
+      <!-- Price and Country Fields -->
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input 
+            name="listing[price]" 
+            placeholder="e.g., 1200" 
+            type="number" 
+            class="form-control"
+            required
+            min="0" 
+            aria-label="Price of the listing in INR"
+          />
+        </div>
+
+        <div class="mb-3 col-md-8">
+          <label for="country" class="form-label">Country</label>
+          <input 
+            name="listing[country]" 
+            placeholder="e.g., India" 
+            type="text"
+            class="form-control" 
+            required
+            aria-label="Country of the listing"
+          />
+        </div>
+      </div>
+
+      <!-- Location Field -->
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          name="listing[location]"
+          placeholder="Enter location (e.g., Goa, Mumbai)"
+          type="text"
+          class="form-control" 
+          required
+          aria-label="Location of the listing"
+        />
+      </div>
+
+      <!-- Submit Button -->
+      <br /><br />
+      <button class="btn btn-dark add-btn" type="submit">Add Listing</button>
+      <br /><br />
+    </form>
+  </div>
+</div>
